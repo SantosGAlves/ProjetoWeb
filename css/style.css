@@ -1,0 +1,38 @@
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.store-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 450px;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 250px;
+    }
+    .offcanvas {
+        --bs-offcanvas-width: 85%;
+    }
+}

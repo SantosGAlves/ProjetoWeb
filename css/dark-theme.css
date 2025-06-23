@@ -1,0 +1,56 @@
+[data-bs-theme="dark"] {
+    body {
+        background-color: #212529;
+        color: var(--bs-light-text-emphasis);
+    }
+
+    .bg-light {
+        background-color: #2c3034 !important;
+    }
+    
+    .card {
+        background-color: var(--bs-dark-bg-subtle, #1a1d20);
+        border-color: var(--bs-border-color-translucent, rgba(255, 255, 255, 0.15));
+    }
+    
+    .list-group-item {
+         background-color: transparent;
+    }
+
+    .text-muted {
+        color: var(--bs-secondary-color) !important;
+    }
+    
+    .text-success {
+        color: var(--bs-success-text-emphasis) !important;
+    }
+
+    .btn-link.text-success {
+        color: var(--bs-success-text-emphasis) !important;
+        text-decoration-color: var(--bs-success-text-emphasis) !important;
+    }
+
+    .navbar {
+        background-color: var(--bs-dark) !important;
+    }
+
+    .navbar .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+        color: #fff !important;
+    }
+    
+    .navbar .navbar-brand.text-success {
+        color: var(--bs-success) !important;
+    }
+    
+    .carousel-caption h1,
+    .carousel-caption h5,
+    .carousel-caption p {
+        color: #f8f9fa;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+}
