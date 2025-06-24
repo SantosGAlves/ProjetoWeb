@@ -21,7 +21,7 @@ function initializeDatabase() {
             { id: 1, storeId: 1, name: 'Maçã Gala', price: 8.99, unit: 'kg', imageUrl: 'https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=600' },
             { id: 2, storeId: 1, name: 'Alface Crespa', price: 3.50, unit: 'un', imageUrl: 'https://images.pexels.com/photos/2893635/pexels-photo-2893635.jpeg?auto=compress&cs=tinysrgb&w=600' },
             { id: 5, storeId: 1, name: 'Cenoura', price: 4.20, unit: 'kg', imageUrl: 'https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=600'},
-            { id: 6, storeId: 1, name: 'Brócolis', price: 6.00, unit: 'un', imageUrl: 'https://images.pexels.com/photos/4054353/pexels-photo-4054353.jpeg?auto=compress&cs=tinysrgb&w=600' },
+            { id: 6, storeId: 1, name: 'Brócolis', price: 6.00, unit: 'un', imageUrl: 'https://images.pexels.com/photos/47347/broccoli-vegetable-food-healthy-47347.jpeg?_gl=1*15fs26*_ga*OTg0NDA4ODAuMTc1MDE3MDcwOA..*_ga_8JE65Q40S6*czE3NTA3MjM1NjckbzQkZzEkdDE3NTA3MjM1NzkkajQ4JGwwJGgw' },
 
             // Produtos da loja 2 (Verdão da Ana)
             { id: 3, storeId: 2, name: 'Banana Nanica', price: 6.50, unit: 'kg', imageUrl: 'https://images.pexels.com/photos/5945848/pexels-photo-5945848.jpeg?auto=compress&cs=tinysrgb&w=600' },
