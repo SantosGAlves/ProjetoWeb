@@ -1,9 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const storeList = document.getElementById('store-list');
-    const addressInput = document.getElementById('address-input');
-    const searchAddressBtn = document.getElementById('search-address-btn');
+    // const addressInput = document.getElementById('address-input'); // Removido
+    // const searchAddressBtn = document.getElementById('search-address-btn'); // Removido
     const useLocationBtn = document.getElementById('use-location-btn');
     let stores = JSON.parse(localStorage.getItem('stores')) || [];
+
+    // Função para rolar a tela suavemente para a lista de lojas
+    function scrollToStores() {
+        const storeListElement = document.getElementById('store-list'); 
+        if (storeListElement) {
+            storeListElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
 
     function renderStores() {
         const userLocation = JSON.parse(localStorage.getItem('userLocation'));
@@ -37,46 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                     </div>`;
             });
+
+            // Rola a tela após os cards serem criados
+            scrollToStores();
+
         }, 500);
     }
 
-    async function searchAddress() {
-        if (!addressInput.value) { alert('Digite um endereço.'); return; }
-        searchAddressBtn.disabled = true;
-        searchAddressBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span>';
-
-        try {
-            const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(addressInput.value)}`);
-            const data = await response.json();
-            if (data && data.length > 0) {
-                const location = { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
-                localStorage.setItem('userLocation', JSON.stringify(location));
-                renderStores();
-            } else {
-                alert('Endereço não encontrado.');
-            }
-        } catch (error) {
-            alert('Erro ao buscar o endereço.');
-        } finally {
-            searchAddressBtn.disabled = false;
-            searchAddressBtn.innerHTML = 'Buscar';
-        }
-    }
+    // Função searchAddress removida
 
     function useCurrentLocation() {
         useLocationBtn.disabled = true;
+        useLocationBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Buscando...'; 
+
         navigator.geolocation.getCurrentPosition(pos => {
             const location = { lat: pos.coords.latitude, lon: pos.coords.longitude };
             localStorage.setItem('userLocation', JSON.stringify(location));
             renderStores();
+            
             useLocationBtn.disabled = false;
+            useLocationBtn.innerHTML = '<i class="bi bi-geo-alt-fill"></i> Ver Lojas Próximas';
         }, () => {
             alert('Não foi possível obter sua localização.');
             useLocationBtn.disabled = false;
+            useLocationBtn.innerHTML = '<i class="bi bi-geo-alt-fill"></i> Ver Lojas Próximas';
         });
     }
 
-    searchAddressBtn.addEventListener('click', searchAddress);
+    // searchAddressBtn.addEventListener('click', searchAddress); // Removido
     useLocationBtn.addEventListener('click', useCurrentLocation);
     
     renderStores();

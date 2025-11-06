@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-success" href="index.html"><i class="bi bi-basket-fill"></i> Hortifast</a>
+            <a class="navbar-brand fw-bold text-success fs-2" href="index.html"><i class="bi bi-basket-fill"></i> Hortifast</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul id="nav-dynamic" class="navbar-nav ms-auto align-items-center"></ul>
@@ -39,36 +39,30 @@
             <p class="lead text-muted">Encontre um hortifruti, faça seu pedido e receba onde estiver.</p>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-8">
-                    <div class="input-group input-group-lg shadow-sm">
-                        <span class="input-group-text bg-white"><i class="bi bi-geo-alt text-danger"></i></span>
-                        <input type="text" id="address-input" class="form-control" placeholder="Informe seu endereço e número">
-                        <button class="btn btn-success" id="search-address-btn">Buscar</button>
-                    </div>
-                    <button class="btn btn-link text-success mt-2" id="use-location-btn"><i class="bi bi-cursor-fill"></i> Usar minha localização atual</button>
+                    <button class="btn btn-success btn-lg shadow fs-3" id="use-location-btn">
+                        <i class="bi bi-geo-alt-fill"></i> Ver Lojas Próximas
+                    </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="container my-5">
+    <main id="stores-section" class="container my-5">
         <h3 class="text-center mb-4">Hortifrutis disponíveis</h3>
         <div id="store-list" class="row g-4">
             <div class="col-12 text-center text-muted"><p>Por favor, informe seu endereço para vermos as lojas mais próximas.</p></div>
         </div>
     </main>
 
-    <!-- Offcanvas do Carrinho Flutuante -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
       <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title"><i class="bi bi-cart-check-fill"></i> Meu Carrinho</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
       </div>
       <div class="offcanvas-body" id="cart-offcanvas-body">
-        <!-- Conteúdo do carrinho será renderizado aqui -->
-      </div>
+        </div>
       <div class="offcanvas-footer p-3 border-top" id="cart-offcanvas-footer">
-        <!-- Total e botão de finalizar serão renderizados aqui -->
-      </div>
+        </div>
     </div>
     
     <script src="js/database.js"></script>
@@ -76,5 +70,16 @@
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 </html>
