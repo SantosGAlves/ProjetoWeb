@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productList = document.getElementById('store-product-list');
     productList.innerHTML = '';
 
-    if (storeProducts.length === 0) {
+if (storeProducts.length === 0) {
         productList.innerHTML = '<p class="text-center col-12">Esta loja ainda não tem produtos cadastrados.</p>';
     } else {
         storeProducts.forEach(product => {
@@ -40,16 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text fw-bold text-success fs-5 mt-auto">R$ ${Number(product.price).toFixed(2)} <span class="text-muted fs-6">/ ${product.unit}</span></p>
                         </div>
+                        
                         ${currentUser && currentUser.role === 'customer' ? `
                         <div class="card-footer p-0">
                             <button class="btn btn-success w-100 rounded-0 add-to-cart-btn" data-product-id="${product.id}">Adicionar</button>
                         </div>
-                        ` : ''}
-                    </div>
+                        ` : `
+                        <div class="card-footer text-center p-2" style="background-color: var(--bs-tertiary-bg);">
+                            <small class="text-muted">
+                                <a href="login.html" class="btn-link text-success fw-bold p-0 text-decoration-none">Faça login</a> para comprar
+                            </small>
+                        </div>
+                        `}
+                        </div>
                 </div>`;
         });
     }
-
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const button = e.currentTarget;

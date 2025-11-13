@@ -33,19 +33,37 @@
         <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </div>
 
-    <header class="bg-light py-5">
+<header class="bg-light py-5">
         <div class="container text-center">
             <h2 class="fw-bold">Tudo pra facilitar seu dia a dia</h2>
             <p class="lead text-muted">Encontre um hortifruti, faça seu pedido e receba onde estiver.</p>
+            
             <div class="row justify-content-center mt-4">
-                <div class="col-md-8">
-                    <button class="btn btn-success btn-lg shadow fs-3" id="use-location-btn">
+                <div class="col-md-8 col-lg-6">
+                    <button class="btn btn-success btn-lg shadow fs-3 w-100" id="use-location-btn">
                         <i class="bi bi-geo-alt-fill"></i> Ver Lojas Próximas
                     </button>
                 </div>
             </div>
+
+            <p class="text-muted my-3">ou</p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <label for="cep-input" class="form-label">Informe um CEP para ver lojas</label>
+                    <div class="input-group input-group-lg shadow-sm">
+                        <input type="tel" class="form-control" id="cep-input" placeholder="00000-000" maxlength="9">
+                        <button class="btn btn-outline-secondary" type="button" id="search-cep-btn">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
+
+    <main id="stores-section" class="container my-5">
 
     <main id="stores-section" class="container my-5">
         <h3 class="text-center mb-4">Hortifrutis disponíveis</h3>
